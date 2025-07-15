@@ -26,7 +26,6 @@ export default function DifficultySelector({difficulties, setSession}) {
          options={options}
          onChange={handleChange}
          placeholder="Select a difficulty"
-         className="text-black"
          styles={{
          control: (base) => ({
             ...base,
@@ -34,6 +33,7 @@ export default function DifficultySelector({difficulties, setSession}) {
             color: 'black',
             borderColor: '#ccc',
             borderRadius: '6px',
+            fontSize: '20px',
             boxShadow: 'none','&:hover': {borderColor: '#999',},
         }),
         option: (base, state) => ({

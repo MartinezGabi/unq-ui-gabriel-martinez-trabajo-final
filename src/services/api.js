@@ -27,11 +27,11 @@ export const checkWord = async (sessionId, word) => {
   } catch (error) {
     if (error.response) {
       if (error.response.status === 400) {
-        throw new Error('La palabra no es válida');
+        throw new Error('Invalid word');
       } else if (error.response.status === 404) {
-        throw new Error('Sesión no encontrada');
+        throw new Error('Session not found');
       }
     }
-    throw new Error('Error al verificar la palabra');
+    throw new Error('Error verifying the word');
   }
 };

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getDifficulties} from './services/api.js'
 import './MainPage.css'
 import DifficultySelector from './components/DifficultySelector.jsx'
+import GameGrid from './components/GameGrid.jsx'
 
 function MainPage() {
   const [session, setSession] = useState(null)
@@ -26,7 +27,7 @@ function MainPage() {
 
       {session && (
         <div>
-          <h3>You are playing on difficulty: {session.difficulty.name}</h3>
+          <GameGrid session={session} setSession={setSession} />
         </div>
       )}
     </div>

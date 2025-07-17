@@ -50,11 +50,7 @@ export default function GameGrid({session, setSession}) {
       }
 
     } catch (error) {
-      if (err.response?.status === 400) {
-        setError('Invalid word');
-      } else {
-        setError('Error verifying the word');
-      }
+      setError(error.message);
     }
   };
 
@@ -95,7 +91,7 @@ export default function GameGrid({session, setSession}) {
                     key={colIndex}
                     style={{
                       backgroundColor: color,
-                      border: '3px solid black',
+                      border: '5px solid black',
                       borderRadius: '5px',
                       width: '70px',
                       height: '70px',
@@ -105,6 +101,7 @@ export default function GameGrid({session, setSession}) {
                       fontWeight: 'bold',
                       fontSize: '40px',
                       textTransform: 'uppercase',
+                      color: 'black',
                     }}
                   >
                     {letter}
@@ -121,7 +118,7 @@ export default function GameGrid({session, setSession}) {
           value={currentAttempt}
           onChange={handleChange}
           maxLength={wordLength}
-          style={{ fontSize: '25px', width: '150px', textAlign: 'center', textTransform: 'uppercase' }}
+          style={{ fontSize: '24px', width: '150px', textAlign: 'center', textTransform: 'uppercase' }}
           />
         <button type="submit">Guess</button>
       </form>
@@ -129,13 +126,13 @@ export default function GameGrid({session, setSession}) {
       {error && <p style={{ color: 'red', textAlign:'center', fontSize:'20px' }}>{error}</p>}
 
       {gameOver && (
-       <div style={{ marginTop: '20px', textAlign: 'center', fontSize: '24px' }}>
+       <div style={{ textAlign: 'center', fontSize: '24px' }}>
         {gameResult === 'win' ? (
           <p style={{ color: 'green', fontWeight: 'bold' }}>You won!</p>
         ) : (
           <p style={{ color: 'red', fontWeight: 'bold' }}>You lose</p>
         )}
-        <button onClick={() => onRestart()} style={{height: '60px', width: '150px', fontSize: '20px'}}>
+        <button onClick={() => onRestart()} style={{height: '50px', width: '150px', fontSize: '18px'}}>
           Play Again
         </button>
         </div>

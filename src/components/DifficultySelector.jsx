@@ -33,7 +33,7 @@ export default function DifficultySelector({difficulties, setSession}) {
             color: 'black',
             borderColor: '#ccc',
             borderRadius: '6px',
-            fontSize: '20px',
+            fontSize: '18px',
             boxShadow: 'none','&:hover': {borderColor: '#999',},
         }),
         option: (base, state) => ({

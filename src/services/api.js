@@ -32,6 +32,5 @@ export const checkWord = async (sessionId, word) => {
         throw new Error('Session not found');
       }
     }
-    throw new Error('Error verifying the word');
   }
 };
